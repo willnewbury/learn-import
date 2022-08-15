@@ -1,5 +1,5 @@
 {
-	"OAUTH_HOST": "https://learn-uat.lxc.liferay.com",
+	"OAUTH_HOST": "https://<liferay instance>",
 	"CLIENT_ID": "id-xxx",
 	"CLIENT_SECRET": "secret-yyyy",
 	"SITE_ID": "83630",
