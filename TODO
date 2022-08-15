@@ -1,0 +1,9 @@
+todo:
+
+error handling on api failure
+image namespacing- commerce_
+
+downsides:
+
+image names could shift
+ties us to sphinx, at lleast at start

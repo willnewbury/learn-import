@@ -1,0 +1,146 @@
+{
+	"aggregateRating": {},
+	"contentFields": [
+		{
+			"contentFieldValue": {
+				"data": "string",
+				"document": {
+					"description": "string",
+					"id": 0,
+					"title": "string"
+				},
+				"geo": {
+					"latitude": 0,
+					"longitude": 0
+				},
+				"image": {
+					"description": "string",
+					"id": 0,
+					"title": "string"
+				},
+				"link": "string",
+				"structuredContentLink": {
+					"embeddedStructuredContent": "string",
+					"id": 0,
+					"title": "string"
+				}
+			},
+			"contentFieldValue_i18n": {
+				"additionalProp1": {
+					"data": "string",
+					"document": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"geo": {
+						"latitude": 0,
+						"longitude": 0
+					},
+					"image": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"link": "string",
+					"structuredContentLink": {
+						"embeddedStructuredContent": "string",
+						"id": 0,
+						"title": "string"
+					}
+				},
+				"additionalProp2": {
+					"data": "string",
+					"document": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"geo": {
+						"latitude": 0,
+						"longitude": 0
+					},
+					"image": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"link": "string",
+					"structuredContentLink": {
+						"embeddedStructuredContent": "string",
+						"id": 0,
+						"title": "string"
+					}
+				},
+				"additionalProp3": {
+					"data": "string",
+					"document": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"geo": {
+						"latitude": 0,
+						"longitude": 0
+					},
+					"image": {
+						"description": "string",
+						"id": 0,
+						"title": "string"
+					},
+					"link": "string",
+					"structuredContentLink": {
+						"embeddedStructuredContent": "string",
+						"id": 0,
+						"title": "string"
+					}
+				}
+			},
+			"name": "string",
+			"nestedContentFields": ["string"]
+		}
+	],
+	"contentStructureId": 0,
+	"creator": {},
+	"customFields": [
+		{
+			"customValue": {
+				"data": {},
+				"data_i18n": {
+					"additionalProp1": "string",
+					"additionalProp2": "string",
+					"additionalProp3": "string"
+				},
+				"geo": {
+					"latitude": 0,
+					"longitude": 0
+				}
+			},
+			"name": "string"
+		}
+	],
+	"datePublished": "2022-08-14T14:49:49.554Z",
+	"description": "string",
+	"description_i18n": {
+		"additionalProp1": "string",
+		"additionalProp2": "string",
+		"additionalProp3": "string"
+	},
+	"externalReferenceCode": "string",
+	"friendlyUrlPath": "string",
+	"friendlyUrlPath_i18n": {
+		"additionalProp1": "string",
+		"additionalProp2": "string",
+		"additionalProp3": "string"
+	},
+	"keywords": ["string"],
+	"priority": 0,
+	"taxonomyCategoryIds": [0],
+	"title": "string",
+	"title_i18n": {
+		"additionalProp1": "string",
+		"additionalProp2": "string",
+		"additionalProp3": "string"
+	},
+	"viewableBy": "Anyone"
+}
