@@ -3,6 +3,7 @@ import json
 import config
 import oauth_token
 import mimetypes
+import hashlib
 
 def getBreadcrumbElement(parent):
 	link = parent['link']
@@ -33,6 +34,12 @@ def importArticle(filepath, config, authorization):
 	if not "display_toc" in article_data:
 		article_data["display_toc"] = False
 
+
+	if not "navtoc" in article_data:
+		article_data["navtoc"] = ""
+
+	externalReferenceCode = hashlib.sha256(article_data['current_page_name'].encode()).hexdigest()
+
 	article = {
 		"contentFields": [
 			{
@@ -52,16 +59,24 @@ def importArticle(filepath, config, authorization):
 					"data": article_data['toc'] if article_data['display_toc'] else ""
 				},
 				"name": "TOC"
+			},
+			{
+				"contentFieldValue": {
+					"data": article_data['navtoc']
+				},
+				"name": "Navigation"
 			}
 		],
 		"contentStructureId": config['ARTICLE_STRUCTURE_ID'],
-		"externalReferenceCode": hash(article_data['current_page_name']),
+		"externalReferenceCode": externalReferenceCode,
 		"friendlyUrlPath": article_data['current_page_name'] + ".html",
 		"title": article_data['title']
 	}
 
 	session = requests.Session()
-	post_uri = f"{config['OAUTH_HOST']}/o/headless-delivery/v1.0/sites/{config['SITE_ID']}/structured-contents"
 
-	res = session.post(post_uri, headers=headers,
+	uri = f"{config['OAUTH_HOST']}/o/headless-delivery/v1.0/sites/{config['SITE_ID']}/structured-contents/by-external-reference-code/{externalReferenceCode}"
+	#post_uri = f"{config['OAUTH_HOST']}/o/headless-delivery/v1.0/sites/{config['SITE_ID']}/structured-contents"
+
+	res = session.put(uri, headers=headers,
 		data=json.dumps(article))
