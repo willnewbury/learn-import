@@ -1,21 +1,20 @@
 todo:
 
-- error handling on api failure
-- image namespacing- commerce_
-- handling other languages
-- handle all projects
-- sync process
-- fix images on all pages
-- vue logic - landing page icons
-- think through external reference code logic again - is hashing the page the right idea or just base64?
-- handle zip files
-- better handling of images (not all of them are getting referenced)
+-   error handling on api failure
+-   image namespacing- commerce\_
+-   handling other languages
+-   handle all projects
+-   sync process
+-   fix images on all pages
+-   vue logic - landing page icons
+-   think through external reference code logic again - is hashing the page the right idea or just base64? - also in view of different product sections (commerce vs dxp)
+-   handle zip files
+-   better handling of images (not all of them are getting referenced)
 
 downsides:
 
-- image names could shift
-- ties us to sphinx, at least at start
-
+-   image names could shift
+-   ties us to sphinx, at least at start
 
 urls:
 
@@ -23,11 +22,10 @@ https://learn-uat.lxc.liferay.com/webdav/learn-python-import/document_library/co
 
 https://learn-uat.lxc.liferay.com/web/learn-python-import/w/_images/0152.png
 
-../../_images/0152.png
+../../\_images/0152.png
 
-../../_images/
+../../\_images/
 
-/webdav/learn-python-import/document_library/commerce_
-
+/webdav/learn-python-import/document*library/commerce*
 
 /webdav/learn-python-import/document_library/commerce_0152.png
