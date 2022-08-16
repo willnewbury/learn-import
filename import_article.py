@@ -1,5 +1,6 @@
 import requests
 import json
+import logging
 import hashlib
 
 
@@ -15,6 +16,7 @@ def getBreadcrumb(current_page_name, parents):
 
 
 def importArticle(filepath, config, authorization):
+    logger = logging.getLogger(__name__)
     headers = {
         "Accept": "application/json",
         "Authorization": authorization,
@@ -25,7 +27,7 @@ def importArticle(filepath, config, authorization):
         article_data = json.load(f)
 
     if not "body" in article_data:
-        print("No HTML body found for " + filepath)
+        logger.error("No HTML body found for " + filepath)
         return
 
     if not "parents" in article_data:
@@ -40,6 +42,10 @@ def importArticle(filepath, config, authorization):
     externalReferenceCode = hashlib.sha256(
         article_data["current_page_name"].encode()
     ).hexdigest()
+
+    logger.info(
+        f"Using ERC {externalReferenceCode} for {article_data['current_page_name']}"
+    )
 
     article = {
         "contentFields": [
@@ -83,3 +89,8 @@ def importArticle(filepath, config, authorization):
     # post_uri = f"{config['OAUTH_HOST']}/o/headless-delivery/v1.0/sites/{config['SITE_ID']}/structured-contents"
 
     res = session.put(uri, headers=headers, data=json.dumps(article))
+
+    if not res.status_code == 200:
+        errorMessage = "Article import failed: " + json.dumps(res.json(), indent=4)
+        logger.error(errorMessage)
+        raise Exception(errorMessage)

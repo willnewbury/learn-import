@@ -1,9 +1,11 @@
 import requests
 import json
+import logging
 import mimetypes
 
 
 def importFile(filepath, filename, config, authorization):
+    logger = logging.getLogger(__name__)
     headers = {"Authorization": authorization}
 
     session = requests.Session()
@@ -31,4 +33,8 @@ def importFile(filepath, filename, config, authorization):
             ),
         ),
     )
-    print(res.text)
+    if not res.status_code == 200:
+        errorMessage = "File import failed: " + json.dumps(res.json(), indent=4)
+        logger.error(errorMessage)
+        raise Exception(errorMessage)
+    logger.debug(res.text)
