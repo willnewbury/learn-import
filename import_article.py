@@ -1,8 +1,5 @@
 import requests
 import json
-import config
-import oauth_token
-import mimetypes
 import hashlib
 
 def getBreadcrumbElement(parent):

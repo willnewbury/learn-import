@@ -1,7 +1,5 @@
-import requests
 import json
-
-from requests import auth
+import requests
 
 def getOAUTHToken(config):
 	post_uri = config['OAUTH_HOST'] + '/o/oauth2/token'

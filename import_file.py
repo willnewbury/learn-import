@@ -1,7 +1,5 @@
 import requests
 import json
-import config
-import oauth_token
 import mimetypes
 
 def importFile(filepath, filename, config, authorization):
