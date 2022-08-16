@@ -5,7 +5,7 @@ echo "This script assumes jq is installed"
 function export_json_to_env () {
     INPUT_FILE="${1}"
     while IFS=$'\t\n' read -r LINE; do
-        export "${LINE}"
+        export "${LINE?}"
     done < <(
         <"${INPUT_FILE}" jq \
             --compact-output \
