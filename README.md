@@ -15,3 +15,7 @@ Create a local config `config.local.json` to set the import site id and add in o
 ## Import Learn
 
 `python3 import_learn.py`
+
+# Formatting
+
+The python code is formatted using black
