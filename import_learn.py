@@ -3,6 +3,10 @@ from decorators import timer
 from util import save_as_json, sha_256sum
 import get_articles
 import get_documents
+from document_folder import (
+    add_missing_document_folders,
+    get_liferay_document_folders_by_path,
+)
 import import_article
 import import_document
 import json
@@ -22,6 +26,7 @@ session = requests.Session()
 @timer
 def collect_sphinx_files():
     articles_by_article_key = {}
+    document_paths = set()
     images = []
     other = []
     for root, d_names, f_names in os.walk(config["SPHINX_OUTPUT_DIRECTORY"]):
@@ -62,11 +67,25 @@ def collect_sphinx_files():
                         translation
                     )
             elif root.endswith("_images"):
-
                 images.append(
                     {
                         "filename": filename,
                         "import_filename": f"{product}_{version}_{language}_{'_'.join(subdirectories)}_{name}",
+                        "path": "",
+                        "product": product,
+                        "version": version,
+                        "language": language,
+                        "sha_256sum": sha_256sum(filename),
+                    }
+                )
+            elif filename.endswith(".zip"):
+                path = "/".join([product, version, language] + subdirectories)
+                document_paths.add(path)
+                images.append(
+                    {
+                        "filename": filename,
+                        "import_filename": "name",
+                        "path": path,
                         "product": product,
                         "version": version,
                         "language": language,
@@ -89,8 +108,9 @@ def collect_sphinx_files():
     save_as_json("articles", articles)
     save_as_json("images", images)
     save_as_json("other", other)
+    save_as_json("document_paths", sorted(document_paths))
 
-    return [articles, images, other]
+    return [articles, images, other, sorted(document_paths)]
 
 
 @timer
@@ -140,7 +160,11 @@ def import_learn():
     import_success = False
 
     try:
-        sphinx_articles, images, other = collect_sphinx_files()
+        sphinx_articles, images, other, sphinx_document_paths = collect_sphinx_files()
+        liferay_document_folders_by_path = get_liferay_document_folders_by_path()
+        add_missing_document_folders(
+            sphinx_document_paths, liferay_document_folders_by_path
+        )
         documents_by_title = get_documents.get_documents()
         import_images(documents_by_title, images)
         articles_by_friendlyurlpath = get_articles.get_articles()
@@ -148,7 +172,7 @@ def import_learn():
 
         import_success = True
     except BaseException as err:
-        logger.error(f"Unexpected {err=}, {type(err)=},  {traceback.format_exc()}")
+        logger.error(f"Unexpected {err=}, {type(err)=}, {traceback.format_exc()}")
 
     logger.info(
         f"Learn import was {'successful' if import_success else 'NOT successful'}."
