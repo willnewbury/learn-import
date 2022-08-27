@@ -1,0 +1,84 @@
+{
+	"actions": {
+		"get-rendered-content-by-display-page": {
+			"method": "GET",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/documents/954779/rendered-content-by-display-page/{displayPageKey}"
+		},
+		"get": {
+			"method": "GET",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/documents/954779"
+		},
+		"replace": {
+			"method": "PUT",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/documents/954779"
+		},
+		"update": {
+			"method": "PATCH",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/documents/954779"
+		},
+		"delete": {
+			"method": "DELETE",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/documents/954779"
+		}
+	},
+	"adaptedImages": [
+		{
+			"contentUrl": "/o/adaptive-media/image/954779/Preview-1000x0/0233.png?t=1661548507349",
+			"height": 476,
+			"resolutionName": "Preview-1000x0",
+			"sizeInBytes": 59294,
+			"width": 1000
+		},
+		{
+			"contentUrl": "/o/adaptive-media/image/954779/Thumbnail-300x300/0233.png?t=1661548507349",
+			"height": 143,
+			"resolutionName": "Thumbnail-300x300",
+			"sizeInBytes": 9566,
+			"width": 300
+		}
+	],
+	"contentUrl": "/documents/417999/839076/0233.png/3b4e9e75-6629-d566-4d82-72111b2c704c?version=1.0&t=1661548507349",
+	"creator": {
+		"additionalName": "",
+		"contentType": "UserAccount",
+		"familyName": "Ziegenfus",
+		"givenName": "Allen",
+		"id": 88428,
+		"name": "Allen Ziegenfus"
+	},
+	"customFields": [],
+	"dateCreated": "2022-08-26T21:15:07Z",
+	"dateModified": "2022-08-26T21:15:07Z",
+	"description": "",
+	"documentFolderId": 839076,
+	"documentType": {
+		"availableLanguages": ["en-US"],
+		"contentFields": [
+			{
+				"contentFieldValue": {
+					"data": "4139293ddf05852fccbf9bc27e1bd72f34647d64e2b6b8b011e5475a53326ea5"
+				},
+				"dataType": "string",
+				"inputControl": "text",
+				"label": "sha_256sum",
+				"name": "Text16231419",
+				"nestedContentFields": [],
+				"repeatable": false
+			}
+		],
+		"description": "",
+		"name": "Learn Synced File"
+	},
+	"encodingFormat": "image/png",
+	"externalReferenceCode": "3b4e9e75-6629-d566-4d82-72111b2c704c",
+	"fileExtension": "png",
+	"id": 954779,
+	"keywords": [],
+	"numberOfComments": 0,
+	"relatedContents": [],
+	"renderedContents": [],
+	"siteId": 417999,
+	"sizeInBytes": 113451,
+	"taxonomyCategoryBriefs": [],
+	"title": "0233.png"
+}

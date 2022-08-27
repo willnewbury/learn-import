@@ -36,7 +36,7 @@ def post_document_folder(name, parentDocumentFolderId):
     if parentDocumentFolderId != 0:
         uri = f"{config['OAUTH_HOST']}/o/headless-delivery/v1.0/document-folders/{parentDocumentFolderId}/document-folders"
 
-    logger.info(
+    logger.debug(
         f"Creating document folder {name} for parentDocumentFolderId {parentDocumentFolderId}"
     )
     return requests.post(

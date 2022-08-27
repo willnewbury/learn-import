@@ -28,8 +28,8 @@ def get_config():
         + str(config["ARTICLE_STRUCTURE_ID"])
     )
 
-    if (config["IMAGE_IMPORT_LIMIT"]) > 0:
-        logger.warning(f"Only importing {config['IMAGE_IMPORT_LIMIT']} images!")
+    if (config["DOCUMENT_IMPORT_LIMIT"]) > 0:
+        logger.warning(f"Only importing {config['DOCUMENT_IMPORT_LIMIT']} images!")
     if (config["ARTICLE_IMPORT_LIMIT"]) > 0:
         logger.warning(f"Only importing {config['ARTICLE_IMPORT_LIMIT']} articles!")
     if (config["API_PAGE_LIMIT"]) > 0:

@@ -165,9 +165,12 @@ def import_article(article, articles_by_friendlyurlpath):
 
     res = session.put(uri, headers=headers, data=json.dumps(translatedArticle))
 
-    response_friendly_url_path = res.json()["friendlyUrlPath"]
-    if response_friendly_url_path != translatedArticle["friendlyUrlPath"]:
-        raise Exception (f"Different friendlyUrlPath created: {response_friendly_url_path}, requested {translatedArticle['friendlyUrlPath']}"
-        )
+    json_res = res.json()
+    if "friendlyUrlPath" in json_res:
+        response_friendly_url_path = json_res["friendlyUrlPath"]
+        if response_friendly_url_path != translatedArticle["friendlyUrlPath"]:
+            raise Exception(
+                f"Different friendlyUrlPath created: {response_friendly_url_path}, requested {translatedArticle['friendlyUrlPath']}"
+            )
 
     return res
