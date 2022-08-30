@@ -2,6 +2,7 @@ import json
 import logging
 import logging.config
 from os.path import exists
+import argparse
 
 logging.config.fileConfig("logging.conf")
 
@@ -9,10 +10,18 @@ logging.config.fileConfig("logging.conf")
 def get_config():
     logger = logging.getLogger(__name__)
     configfile = "./config.json"
-    localconfigfile = "./config.local.json"
 
-    if exists(localconfigfile):
-        configfile = localconfigfile
+    parser = argparse.ArgumentParser(prog="Learn Import")
+    parser.add_argument(
+        "--config",
+        default="./config.local.json",
+        help="Configuration file name, i.e. ./config.lxc.json, defaults to ./config.local.json",
+        required=False,
+    )
+    args = parser.parse_args()
+
+    if exists(args.config):
+        configfile = args.config
 
     logger.info("Using config file" + configfile)
 
