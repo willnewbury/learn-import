@@ -1,0 +1,489 @@
+{
+	"actions": {
+		"get": {
+			"method": "GET",
+			"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/content-structures/590312/structured-contents"
+		}
+	},
+	"facets": [],
+	"items": [
+		{
+			"actions": {
+				"get-rendered-content": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/rendered-content/{contentTemplateId}"
+				},
+				"get-rendered-content-by-display-page": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/rendered-content-by-display-page/{displayPageKey}"
+				},
+				"subscribe": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/subscribe"
+				},
+				"unsubscribe": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/unsubscribe"
+				},
+				"get": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922"
+				},
+				"replace": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922"
+				},
+				"update": {
+					"method": "PATCH",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922"
+				},
+				"delete": {
+					"method": "DELETE",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922"
+				}
+			},
+			"availableLanguages": ["en-US"],
+			"contentFields": [
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Body",
+					"name": "CopyOfBody",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "TOC",
+					"name": "CopyOfTOC",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Breadcrumb",
+					"name": "CopyOfBreadcrumb",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Navigation",
+					"name": "CopyOfNavigation",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {},
+					"dataType": "",
+					"label": "Breadcrumb",
+					"name": "FieldsGroup25252078",
+					"nestedContentFields": [
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": "https://learn.liferay.com/index.html"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": "Learn Liferay"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": "https://learn.liferay.com/dxp/latest/en/index.html"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": "DXP"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": "https://learn.liferay.com/dxp/latest/en/process-automation.html"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": "Process Automation"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": "https://learn.liferay.com/dxp/latest/en/process-automation/forms.html"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": "Forms"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": "https://learn.liferay.com/dxp/latest/en/process-automation/forms/sharing-forms-and-managing-submissions.html"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": "Sharing Forms and Managing Submissions"
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {
+								"data": "Sharing Forms"
+							},
+							"dataType": "string",
+							"inputControl": "text",
+							"label": "Breadcrumb Title",
+							"name": "BreadcrumbTitle",
+							"nestedContentFields": [],
+							"repeatable": false
+						}
+					],
+					"repeatable": false
+				}
+			],
+			"contentStructureId": 590312,
+			"creator": {
+				"additionalName": "",
+				"contentType": "UserAccount",
+				"familyName": "Liao",
+				"givenName": "Ethan",
+				"id": 544119,
+				"name": "Ethan Liao"
+			},
+			"customFields": [],
+			"dateCreated": "2022-08-29T22:45:19Z",
+			"dateModified": "2022-08-29T22:54:35Z",
+			"datePublished": "2022-08-29T22:41:00Z",
+			"description": "",
+			"externalReferenceCode": "f4efcbd7-5172-66aa-1405-6b9a89e70791",
+			"friendlyUrlPath": "breadcrumb-test",
+			"id": 1042922,
+			"key": "1042920",
+			"keywords": [],
+			"numberOfComments": 0,
+			"priority": 0,
+			"relatedContents": [],
+			"renderedContents": [
+				{
+					"contentTemplateId": "1042930",
+					"contentTemplateName": "learn article breadcrumb test",
+					"markedAsDefault": true,
+					"renderedContentURL": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/rendered-content/1042930"
+				},
+				{
+					"contentTemplateId": "breadcrumb-test",
+					"contentTemplateName": "breadcrumb test",
+					"markedAsDefault": true,
+					"renderedContentURL": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/1042922/rendered-content-by-display-page/breadcrumb-test"
+				}
+			],
+			"siteId": 417999,
+			"subscribed": false,
+			"taxonomyCategoryBriefs": [],
+			"title": "breadcrumb test",
+			"uuid": "5026795d-9808-f4b9-e35e-b269a6330835"
+		},
+		{
+			"actions": {
+				"get-rendered-content": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/rendered-content/{contentTemplateId}"
+				},
+				"get-rendered-content-by-display-page": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/rendered-content-by-display-page/{displayPageKey}"
+				},
+				"subscribe": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/subscribe"
+				},
+				"unsubscribe": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/unsubscribe"
+				},
+				"get": {
+					"method": "GET",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610"
+				},
+				"replace": {
+					"method": "PUT",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610"
+				},
+				"update": {
+					"method": "PATCH",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610"
+				},
+				"delete": {
+					"method": "DELETE",
+					"href": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610"
+				}
+			},
+			"availableLanguages": ["en-US"],
+			"contentFields": [
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Body",
+					"name": "CopyOfBody",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "TOC",
+					"name": "CopyOfTOC",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Breadcrumb",
+					"name": "CopyOfBreadcrumb",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {
+						"data": ""
+					},
+					"dataType": "string",
+					"inputControl": "text",
+					"label": "Navigation",
+					"name": "CopyOfNavigation",
+					"nestedContentFields": [],
+					"repeatable": false
+				},
+				{
+					"contentFieldValue": {},
+					"dataType": "",
+					"label": "Breadcrumb",
+					"name": "FieldsGroup25252078",
+					"nestedContentFields": [
+						{
+							"contentFieldValue": {},
+							"dataType": "",
+							"label": "PARENTS",
+							"name": "parents",
+							"nestedContentFields": [
+								{
+									"contentFieldValue": {
+										"data": ""
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link URL",
+									"name": "LinkURL",
+									"nestedContentFields": [],
+									"repeatable": false
+								},
+								{
+									"contentFieldValue": {
+										"data": ""
+									},
+									"dataType": "string",
+									"inputControl": "text",
+									"label": "Link Text",
+									"name": "LinkText",
+									"nestedContentFields": [],
+									"repeatable": false
+								}
+							],
+							"repeatable": true
+						},
+						{
+							"contentFieldValue": {
+								"data": ""
+							},
+							"dataType": "string",
+							"inputControl": "text",
+							"label": "Breadcrumb Title",
+							"name": "BreadcrumbTitle",
+							"nestedContentFields": [],
+							"repeatable": false
+						}
+					],
+					"repeatable": false
+				}
+			],
+			"contentStructureId": 590312,
+			"creator": {
+				"additionalName": "",
+				"contentType": "UserAccount",
+				"familyName": "Ziegenfus",
+				"givenName": "Allen",
+				"id": 88428,
+				"name": "Allen Ziegenfus"
+			},
+			"customFields": [],
+			"dateCreated": "2022-08-27T22:31:50Z",
+			"dateModified": "2022-08-27T22:31:50Z",
+			"datePublished": "2022-08-27T22:31:00Z",
+			"description": "",
+			"externalReferenceCode": "20ec2509-df5b-f73a-1d23-53a0c80b39d1",
+			"friendlyUrlPath": "tets",
+			"id": 997610,
+			"key": "997608",
+			"keywords": [],
+			"numberOfComments": 0,
+			"priority": 0,
+			"relatedContents": [],
+			"renderedContents": [
+				{
+					"contentTemplateId": "1042930",
+					"contentTemplateName": "learn article breadcrumb test",
+					"markedAsDefault": false,
+					"renderedContentURL": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/rendered-content/1042930"
+				},
+				{
+					"contentTemplateId": "breadcrumb-test",
+					"contentTemplateName": "breadcrumb test",
+					"markedAsDefault": true,
+					"renderedContentURL": "https://learn-uat.lxc.liferay.com/o/headless-delivery/v1.0/structured-contents/997610/rendered-content-by-display-page/breadcrumb-test"
+				}
+			],
+			"siteId": 417999,
+			"subscribed": false,
+			"taxonomyCategoryBriefs": [],
+			"title": "tets",
+			"uuid": "20ec2509-df5b-f73a-1d23-53a0c80b39d1"
+		}
+	],
+	"lastPage": 1,
+	"page": 1,
+	"pageSize": 20,
+	"totalCount": 2
+}
