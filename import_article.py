@@ -38,7 +38,7 @@ def import_article(article, articles_by_friendlyurlpath):
     }
     title_i18n = {}
     available_languages = []
-
+    DEFAULT_LANGUAGE_ID = "en-US"
     for translation in article["translations"]:
         with open(translation["filename"], encoding="utf-8") as f:
             translation_data = json.load(f)
@@ -94,6 +94,9 @@ def import_article(article, articles_by_friendlyurlpath):
         article["article_key"].encode()
     ).hexdigest()
 
+    if DEFAULT_LANGUAGE_ID not in available_languages:
+        available_languages.append(DEFAULT_LANGUAGE_ID)
+
     translatedArticle = {
         "availableLanguages": available_languages,
         "contentFields": [
@@ -147,12 +150,13 @@ def import_article(article, articles_by_friendlyurlpath):
     logger.info(f"Importing... {article['article_key']}")
 
     # Make sure the default language has the sha value since it's what's returned in get_articles
-    DEFAULT_LANGUAGE_ID = "en-US"
+    for liferay_language_id in available_languages:
+        contentFieldValues["sha_256sum"][liferay_language_id] = {"data": sha_256sum}
 
     translatedArticle["contentFields"].append(
         {
             "contentFieldValue": {"data": ""},
-            "contentFieldValue_i18n": {DEFAULT_LANGUAGE_ID: {"data": sha_256sum}},
+            "contentFieldValue_i18n": contentFieldValues["sha_256sum"],
             "name": "sha_256sum",
         }
     )
