@@ -1,5 +1,5 @@
 {
-	"OAUTH_HOST": "https://<liferay instance>",
+	"OAUTH_HOST": "http://localhost:8080",
 	"CLIENT_ID": "id-xxx",
 	"CLIENT_SECRET": "secret-yyyy",
 	"SITE_ID": "83630",
