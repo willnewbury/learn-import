@@ -75,7 +75,12 @@ If you want to start liferay / db from scratch you can remove the volumes and th
 
     `pipenv shell`
 
-2. Run the import script
+2. Review your configuration file (i.e. `config.local.json`). To just import a few articles / documents you can set the following. Otherwise it will import the whole site which may take a long time (45 minutes on LXC)
+
+    "DOCUMENT_IMPORT_LIMIT": 5,
+    "ARTICLE_IMPORT_LIMIT": 5,
+
+3. Run the import script
 
     `python3 import_learn.py`
 
