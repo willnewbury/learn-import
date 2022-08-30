@@ -1,0 +1,56 @@
+version: '3.3'
+services:
+    database:
+        image: 'mysql:5.7'
+        container_name: db
+        environment:
+            - LCP_PROJECT_ENVIRONMENT=local
+            - MYSQL_DATABASE=lportal
+            - MYSQL_PASSWORD=passw0rd
+            - MYSQL_ROOT_PASSWORD=passw0rd
+            - MYSQL_USER=dxpcloud
+            - LCP_DBNAME=lportal
+            - LCP_MASTER_USER_NAME=dxpcloud
+            - LCP_MASTER_USER_PASSWORD=passw0rd
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci --character-set-filesystem=utf8 --max_allowed_packet=32M
+        ports:
+            - '3307:3306'
+        volumes:
+            - type: volume
+              source: learn-database-data
+              target: /var/lib/mysql
+
+    liferay:
+        image: 'liferay/dxp:latest'
+        container_name: lr
+        environment:
+            - LCP_PROJECT_ENVIRONMENT=local
+            - LIFERAY_USERS_PERIOD_REMINDER_PERIOD_QUERIES_PERIOD_ENABLED=false
+            - LCP_PROJECT_ID=local
+            - JPDA_ADDRESS=0.0.0.0:8000
+            - LIFERAY_JPDA_ENABLED=true
+            - LIFERAY_MODULE_PERIOD_FRAMEWORK_PERIOD_PROPERTIES_PERIOD_OSGI_PERIOD_CONSOLE=0.0.0.0:11311
+            - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=com.mysql.cj.jdbc.Driver
+            - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=passw0rd
+            - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL=jdbc:mysql://db/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false&enabledTLSProtocols=TLSv1,TLSv1.1,TLSv1.2
+            - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=dxpcloud
+            - LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true
+            - LIFERAY_DISABLE_TRIAL_LICENSE=false
+        ports:
+            - '0.0.0.0:8000:8000'
+            - '0.0.0.0:8080:8080'
+            - '0.0.0.0:11311:11311'
+            - '0.0.0.0:9000:9000'
+        volumes:
+            - type: volume
+              source: learn-liferay-data
+              target: /opt/liferay/data
+            - type: bind
+              source: .
+              target: /mnt/liferay
+        depends_on:
+            - database
+
+volumes:
+    learn-liferay-data:
+    learn-database-data:
