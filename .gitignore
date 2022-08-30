@@ -1,4 +1,4 @@
-config.local.*
+config.*
 __pycache__/*
 build
 *.code-workspace
